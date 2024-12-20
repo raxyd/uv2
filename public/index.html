@@ -1,23 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Stellar Proxy</title>
-        <link rel="stylesheet" href="example.css">
-        <link rel="icon" href="js/imgs/logo/logo.png" type="image/png">
-        <meta property="og:title" content="Stellar.">
-        <meta property="og:description" content="stellar proxy">
-        <meta property="og:image" content="https://cdn.discordapp.com/attachments/1302688793706627153/1308605549826277416/stellar.png?ex=67447c23&is=67432aa3&hm=3cb92708d7a3b197b02fe54da55e1e0119cef40d2318d84ad602d53aff35c205&">
-        <meta property="og:type" content="website">
         <script src="/uv/uv.bundle.js"></script>
         <script src="/uv/uv.config.js"></script>
-        <script src="/baremux/index.js"></script>
 
         <script>
         if ("serviceWorker" in navigator) {
-            window.addEventListener("load", async () => {
-                await navigator.serviceWorker.register("/uv/sw.js");
+            window.addEventListener("load", () => {
+                navigator.serviceWorker.register("/uv/sw.js", {
+                    scope: __uv$config.prefix,
+                });
             });
         }
         </script>
@@ -28,11 +20,7 @@
         <input type="text" id="urlInput" placeholder="Enter URL here">
         <button id="searchButton" class="rounded-button4">Search Text</button>
 
-        <iframe id="iframeWindow" class="iframeWindow" width="1028" height="720"></iframe>
-        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-        <script src="js/app.js"></script>
-        <script src="js/dynamicText.js"></script>
-        <script src="js/quests.js"></script>
+        <iframe id="iframeWindow" class="iframeWindow" height="720px" width="1280px"></iframe>
     </body>
     <script src="example.js"></script>
 </html>
